@@ -5,65 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LadLibrary</title>
     <style>
-        * {
+         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             background-color: #f4f4f9;
             color: #333;
-            padding-top: 100px;
         }
 
         header {
             position: fixed;
-            top: 0;
             width: 100%;
-            height: 55px;
-            background-color: #4f4fca;
-            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            z-index: 1000000;
-        }
-
-        .poisk-main {
-            position: fixed;
-            top: 55px;
-            width: 100%;
-            background-color: white;
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1000000;
+            background-color: #4f4fca;
+            color: white;
+            height: 55px;
+            z-index: 100;
+            top: 0;
         }
 
         .poisk {
+            z-index: 100;
+            position: fixed;
+            width: 850px;
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
+            left: 50%;
+            height: 60px;
             align-items: center;
-            gap: 20px;
+            transform: translateX(-50%);
+            background-color: white;
+        }
+
+        .poisk-main {
             width: 100%;
-            max-width: 1100px;
+            position: fixed;
+            border-bottom: 1.5px solid rgba(0, 0, 0, 0.183);
+            z-index: 100;
+            position: fixed;
+            top: 55px;
+            display: flex;
+            justify-content: space-around;
+            left: 50%;
+            height: 60px;
+            align-items: center;
+            transform: translateX(-50%);
+            background-color: white;
         }
 
         .poisk img {
-            width: 150px;
+            width: 200px;
         }
 
         a {
-            padding: 7px 12px;
+            padding: 7px 10px;
             background-color: #3c3c9d;
             color: white;
             text-decoration: none;
-            border-radius: 8px;
-            font-size: 14px;
+            border-radius: 10px;
         }
 
         a:hover {
@@ -74,46 +79,45 @@
             padding: 7px 10px;
             border-radius: 10px;
             border: 2px solid #3c3c9d;
-            width: 250px;
+            width: 300px;
+            height: 15px;
         }
 
         .book-container {
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 130px;
             padding: 20px;
-            background-color: white;
+            padding-bottom: 60px;
+            background-color: #fff;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            margin-top: 130px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
             margin-bottom: 30px;
         }
 
         .book-image {
-            flex: 1;
-            min-width: 250px;
-            max-width: 300px;
             margin-right: 20px;
             position: relative;
         }
 
         .book-image img {
-            width: 100%;
+            width: 250px;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1;
         }
 
         .book-details {
-            flex: 2;
-            max-width: 700px;
+            max-width: 800px;
         }
 
         .book-details h1 {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .book-details p {
@@ -123,16 +127,18 @@
         }
 
         .book-details h2 {
-            font-size: 20px;
+            font-size: 16px;
+            line-height: 1.6;
             color: #333;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         .book-image a {
             position: absolute;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: -40px;
+            left: 0;
+            width: 210px;
+            text-align: center;
             padding: 10px 20px;
             background-color: #3c3c9d;
             color: white;
