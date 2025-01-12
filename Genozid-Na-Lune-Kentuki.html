@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LadLibrary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding-top: 100px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 55px;
+            background-color: #4f4fca;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 1000000;
+        }
+
+        .poisk-main {
+            position: fixed;
+            top: 55px;
+            width: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000000;
+        }
+
+        .poisk {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        .poisk img {
+            width: 150px;
+        }
+
+        a {
+            padding: 7px 12px;
+            background-color: #3c3c9d;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        a:hover {
+            background-color: #5d5db8;
+        }
+
+        input {
+            padding: 7px 10px;
+            border-radius: 10px;
+            border: 2px solid #3c3c9d;
+            width: 250px;
+        }
+
+        .book-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 130px;
+            margin-bottom: 30px;
+        }
+
+        .book-image {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .book-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .book-details {
+            flex: 2;
+            max-width: 700px;
+        }
+
+        .book-details h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .book-details p {
+            font-size: 18px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .book-details h2 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .book-image a {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #3c3c9d;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .book-image a:hover {
+            background-color: #5d5db8;
+        }
+
+        @media (max-width: 768px) {
+            header {
+        height: 50px;
+        font-size: 13px;
+    }
+
+    .poisk {
+        width: 400px;
+        height: 50px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .poiskbutton {
+        display: none;
+    }
+
+    .poisk img {
+        width: 120px;
+    }
+
+    .poisk-main {
+        top: 50px;
+        height: 50px;
+        align-items: center;
+    }
+
+    input {
+        display: none;
+        width: 100%;
+        height: 35px;
+    }
+
+    a {
+        font-size: 14px;
+        padding: 5px 8px;
+    }
+
+            .book-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .book-image {
+                margin-bottom: 20px;
+            }
+
+            .book-details {
+                max-width: 90%;
+            }
+
+            .book-details h1 {
+                font-size: 24px;
+            }
+
+            .book-details h2 {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+        height: 45px;
+        font-size: 7px;
+    }
+
+    .poisk {
+        width: 100%;
+        height: 45px;
+        justify-content: space-around;
+    }
+
+    .poiskbutton {
+        display: none;
+    }
+
+    .poisk-main {
+        top: 45px;
+        height: 45px;
+        align-items: center;
+    }
+
+    input {
+        height: 30px;
+    }
+
+    a {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+
+    .public {
+        display: none;
+    }
+
+            .book-details h1 {
+                font-size: 20px;
+            }
+
+            .book-details h2 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Читай разное! Читай что угодно!<sup style="color: rgba(255, 255, 255, 0.521);">6+</sup></h1>
+</header>
+
+<div class="poisk-main">
+    <div class="poisk">
+        <img src="LadLibrary.png" alt="LadLibrary">
+        <a href="index.html">Главная</a>
+        <a class="public" href="https://t.me/Ladnoanet">Опубликовать</a>
+        <input placeholder="Поиск..." type="text">
+        <a class="poiskbutton" href="poisk.html">Поиск</a>
+    </div>
+</div>
+
+<div class="book-container">
+    <div class="book-image">
+        <img src="Геноцидъ на Луне в Кентуки.png" alt="Обложка книги">
+    </div>
+    <div class="book-details">
+        <h1>Геноцидъ на Луне в Кентуки</h1>
+        <p><strong>Автор:</strong> Уильям Шекспир</p>
+        <h2>Персонажи:</h2>
+        <h2>Kentucky Earth</h2>
+        <h2>-YHW❄CH</h2>
+        <h2>ladno</h2>
+        <h2>Не ladno</h2>
+        <h2>Текст книги:</h2>
+        <h2 style="color: #777;">Kentucky Earth</h2>
+        <h1>ladno и Неladno — Главная пара, этой группы лиц!</h1>
+        <h2 style="color: #777;">-YHW❄CH</h2>
+        <h1>Сюр — но от-того мне по душе больше.</h1>
+        <h2 style="color: #777;">Не ladno</h2>
+        <h1>Ого, сей вестью я чрезвычайно изумлён и удивлён!</h1>
+        <h2 style="color: #777;">Kentucky Earth</h2>
+        <h1>Целуйтесь!</h1>
+        <h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">ladno</h2>
+                <h1>Простите великодушно! Однако смею с почтением отклонить данное предложение.</h1>
+                <h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Не ladno</h2>
+                <h1>Вы меня потешили! Сей жалкий отблеск личности недостоин моего драгоценного внимания!</h1>
+                <h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Kentucky Earth говоря ladno</h2>
+                <h1>Премного уважаю Вас, потому и уважаю Ваше достопочтенное мнение. Предлагаю заместо того подлечь головою под длань мою, чтобы сделал я Вам приятное обстоятельство.</h1>
+                <h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">ladno</h2>
+                <h1>Заинтересовали, и какое же обстоятельство?</h1>
+                <h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Kentucky Earth гладит ladno</h2>
+                <h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">ladno</h2>
+                <h1>Забавнейшая ситуация! Позвольте выразить вам мою благодарность за неё.</h1>
+                <h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Kentucky Earth</h2>
+                <h1>Можете обратиться за тем ко мне в любое время, сударь! В доме моём большом место вам всегда найдётся.</h1>
+                <h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Не ladno кричит на ladno</h2>
+                <h1>Как же это! Вы совершенно лишились рассудка?! Не осмеливайтесь перетягивать на себя всё внимание!</h1>
+                <h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">-YHW❄CH</h2>
+                <h1>Вы, авось, решили внутренние конфликты-с? Да-да! Следовало б их разрешить со своей личностью, кабы я знал, кому на колени падать.</h1>
+                <h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">ladno не обращая внимания говорит Kentucky Earth</h2>
+                <h1>Благодарствую за данное предложение!</h1>
+                <h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Kentucky Earth говорит -YHW❄CH</h2>
+                <h1>На колени-с падать – к небогоугодному акту, сэр!</h1>
+                <h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">ladno говорит -YHW❄CH</h2>
+                <h1>Я совершенно в недоумении! Эта сущность нападает на меня и обвиняет за ничего!</h1>
+                <h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Kentucky Earth говоря ladno</h2>
+                <h1>Вас благодарю за мне оказанное внимание, Ваше общество приятно мне и доставило сатисфакцию.</h1>
+                <h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Не ladno кричит на ladno</h2>
+                <h1>Ах, вы начали называть меня сущностью!? Но вы ведь солидный человек! Такое обращение совершенно неприемлемо и не подобает!</h1>
+                <h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">-YHW❄CH говорит Kentucky Earth</h2>
+                <h1>Знаете-ль — вы правы, я не смею притезать на иную истину! Да смею поделиться своим состоянием — у меня уж более сего запущенный гонартроз, и мне в мучительную пытку: стоять дольше пары секунд! Приходится, увы, полагаться на импровизированные пути. Дабы не терять лица - падаю на колени пред теми, кого безгранично уважаю.</h1>
+                <h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">ladno кричит на Не ladno</h2>
+                <h1>Закройте, пожалуйста, рот! Не видите ли вы, что я пытаюсь выразить свою благодарность человеку? Молчите и стыдитесь за свой поступок! И то, вы моя вторая личность!</h1>
+                <h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">ladno говорит -YHW❄CH</h2>
+                <h1>Не могу не согласиться с вашими мудрыми размышлениями.</h1>
+                <h1 style="color: #777;">От того и закончилась история</h1>
+                <h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Есть ли мораль в этой истории, или нет — решать, конечно, вам. Однако, в те тяжкие времена Геноцида на Луне в Кентуки, никому не было до таких размышлений.</h2>
+    </div>
+</div>
+
+</body>
+</html>
