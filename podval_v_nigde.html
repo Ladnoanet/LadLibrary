@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LadLibrary</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #4f4fca;
+            color: white;
+            height: 55px;
+            z-index: 100;
+            top: 0;
+        }
+
+        .poisk {
+            z-index: 100;
+            position: fixed;
+            width: 850px;
+            display: flex;
+            justify-content: space-around;
+            left: 50%;
+            height: 60px;
+            align-items: center;
+            transform: translateX(-50%);
+            background-color: white;
+        }
+
+        .poisk-main {
+            width: 100%;
+            position: fixed;
+            border-bottom: 1.5px solid rgba(0, 0, 0, 0.183);
+            z-index: 100;
+            position: fixed;
+            top: 55px;
+            display: flex;
+            justify-content: space-around;
+            left: 50%;
+            height: 60px;
+            align-items: center;
+            transform: translateX(-50%);
+            background-color: white;
+        }
+
+        .poisk img {
+            width: 200px;
+        }
+
+        a {
+            padding: 7px 10px;
+            background-color: #3c3c9d;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+        a:hover {
+            background-color: #5d5db8;
+        }
+
+        input {
+            padding: 7px 10px;
+            border-radius: 10px;
+            border: 2px solid #3c3c9d;
+            width: 300px;
+            height: 15px;
+        }
+
+        .book-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 130px;
+            padding: 20px;
+            padding-bottom: 60px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+        }
+
+        .book-image {
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .book-image img {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .book-details {
+            max-width: 800px;
+        }
+
+        .book-details h1 {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .book-details p {
+            font-size: 18px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .book-details h2 {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .book-image a {
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            width: 210px;
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #3c3c9d;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .book-image a:hover {
+            background-color: #5d5db8;
+        }
+
+        @media (max-width: 858px) {
+            header {
+        height: 50px;
+        font-size: 13px;
+    }
+
+    .poisk {
+        width: 400px;
+        height: 50px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .poiskbutton {
+        display: none;
+    }
+
+    .poisk img {
+        width: 120px;
+    }
+
+    .poisk-main {
+        top: 50px;
+        height: 50px;
+        align-items: center;
+    }
+
+    input {
+        display: none;
+        width: 100%;
+        height: 35px;
+        outline: none;
+    }
+
+    a {
+        font-size: 14px;
+        padding: 5px 8px;
+    }
+
+            .book-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .book-image {
+                margin-bottom: 20px;
+            }
+
+            .book-details {
+                max-width: 90%;
+            }
+
+            .book-details h1 {
+                font-size: 24px;
+            }
+
+            .book-details h2 {
+                font-size: 18px;
+            }
+
+            .book-image {
+            margin-right: 20px;
+            position: relative;
+        }
+        }
+
+        @media (max-width: 480px) {
+            header {
+        height: 45px;
+        font-size: 7px;
+    }
+
+    .poisk {
+        width: 100%;
+        height: 45px;
+        justify-content: space-around;
+    }
+
+    .poiskbutton {
+        display: none;
+    }
+
+    .poisk-main {
+        top: 45px;
+        height: 45px;
+        align-items: center;
+    }
+
+    input {
+        height: 30px;
+    }
+
+    a {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+
+    .public {
+        display: none;
+    }
+
+            .book-details h1 {
+                font-size: 20px;
+            }
+
+            .book-details h2 {
+                font-size: 16px;
+            }
+
+            .book-image img {
+            display: none;
+        }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Читай разное! Читай что угодно!<sup style="color: rgba(255, 255, 255, 0.521);">6+</sup></h1>
+    </header>
+    <div class="poisk-main">
+        <div class="poisk">
+            <img src="LadLibrary.png" alt="LadLibrary">
+            <a href="index.html">Главная</a>
+            <a class="public" href="https://t.me/Ladnoanet">Опубликовать</a>
+            <input placeholder="Поиск..." type="text">
+            <a class="poiskbutton" style="margin-left: -50px;" href="poisk.html">Поиск</a>
+        </div>
+    </div>
+
+    <div class="book-container">
+        <div class="book-image">
+            <img src="Подвал в нигде.png" alt="Обложка книги">
+        </div>
+        <div class="book-details">
+            <h1>Подвал в нигде... и в ни когда...</h1>
+            <p><strong>Автор:</strong> ladnoanet & Kentucky</p>
+            <h2>Стиль книги:</h2>
+            <h2 style="margin-top: -20px;">Философия</h2>
+            <h2>Текст книги:</h2>
+            <h1>1. Обычный день</h1>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Ladno сидел на диване, уставившись в экран телевизора. На нём бесконечно крутились однообразные шоу, но Ladno был словно в трансе. Рядом, на другом конце дивана, лежал его друг Kentucky.</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Ladno: Как ты думаешь, почему мы никогда не выходим на улицу?</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Kentucky: А зачем? У нас всё есть — еда, крыша над головой. Чего тебе ещё надо?</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Ladno пожал плечами. Действительно, он и не мог вспомнить, чтобы ему что-то требовалось. Но всё же странное чувство беспокойства не покидало его.</h2>
+
+<h1>2. Неловкий момент</h1>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Разговор продолжался в духе бытовых мелочей, когда вдруг Kentucky, смеясь, сказал:</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Kentucky: Ну, это прям как ты у меня в подвале! … Ой. Ты ничего не слышал! Всё нормально!</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Ladno: Что значит «в подвале»? Это что, не моя квартира?</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Kentucky: Да шучу я! Расслабься. Это твой дом, конечно.</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Ladno вдруг вспомнил. Те странные моменты, когда он просыпался и не мог понять, где находится. Окна в квартире, которые никогда не открывались. И это странное ощущение, что он здесь, но не здесь.</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Ladno: Нет, Kentucky. Я знаю, что это не моя квартира. Я знаю, что ты держишь меня в подвале. Я притворялся, что сплю, когда ты меня сюда тащил. Я всё видел.</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Kentucky замер. Его лицо изменилось, впервые за долгое время выражая нечто, кроме дежурного веселья.</h2>
+
+<h1>3. Осознание</h1>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Kentucky: Даже если это так, что ты можешь сделать? Ты ведь всё равно не выйдешь.</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Ladno: Но зачем? Зачем ты это делаешь?</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Kentucky: Потому что там ничего нет. Пустота. Главное — есть я, и есть место для жизни. Это разве не достаточно?</h2>
+
+<h1>4. Кто ты, Kentucky?</h1>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Ladno: Тогда кто ты вообще такой? И почему я здесь? Какой во всём этом смысл?</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Kentucky: Я не знаю, кто я. Да... я правда не знаю... Это… просто так.</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Ladno: Погоди... Это означает только одно! Тебя ктото создал! Тот, кто выше нас!</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Kentucky: Может быть, ты и прав</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Ladno: Это означает что он может контролировать наши диалоги и уничтожить нас!</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Kentucky: Скорее всего, он просто самоуничтожился, ради моей свободы</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Ladno: Подожди... мы сломали 4ую стену! Мы разрушили каноны этого мира!</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Как только Ladno подумал об этом, внезапно мир тсал координально меняться!</h2>
+
+<h1>5. Конец</h1>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Мир вокруг начал тихо изменяться. Сначала исчезли мелкие детали: узоры на стенах, шум из телевизора. Затем пропали сами стены.</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Кентуки: Ладно, я… я не хочу исчезать.</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Ладноанет молчал. Он понимал, что говорить уже бессмысленно. Вселенная схлопывалась. И с каждым мгновением её становилось всё меньше.</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">И вот, наконец, не осталось ничего.</h2>
+<h2 style="color: #777; margin-bottom: 0; margin-top: 20px; font-size: 20px;">Больше ничего не существует.</h2>
+
+        </div>
+    </div>
+    
+
+</body>
+</html>
